@@ -8,7 +8,7 @@
     - ['{{inventory_dir}}/secrets.yml']
   become: yes
   tasks:
-    - name: Create container_repository
+    - name: Create container repository
       shell:
               # required - Added below command to create OCI repo in the compartment
         oci --auth instance_principal artifacts container repository create --compartment-id "{{ compartment_id }}" --display-name "sunbird5/{{ image_name }}"
