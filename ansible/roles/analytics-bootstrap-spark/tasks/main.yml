@@ -4,7 +4,6 @@
   become: yes
   become_method: runas
   become_user: "{{ analytics_user }}"
-  become_password: "amit@1234"
   lineinfile:
     path: '{{ analytics_user_home }}/.bashrc'
     line: 'export {{item.var}}={{item.value}}'
