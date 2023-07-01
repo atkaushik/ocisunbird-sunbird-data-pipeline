@@ -59,7 +59,7 @@
     - {var: 'PUBLIC_REPORT_CONTAINER', value: '{{ sunbird_public_azure_report_container_name }}'}
     - {var: 'REPORT_BACKUP_CONTAINER', value: 'portal-reports-backup'}
     - {var: 'GOOGLE_CREDENTIALS_PATH', value: '/home/analytics/credentials'}
-    - {var: 'STORAGE_PROVIDER', value: 'AZURE'}
+    - {var: 'STORAGE_PROVIDER', value: 'OCI'}
     - {var: 'ENV', value: '{{env}}'}
     - {var: 'KAFKA_BROKER_HOST', value: "{{groups['processing-cluster-kafka'][0]}}:9092"}
 
