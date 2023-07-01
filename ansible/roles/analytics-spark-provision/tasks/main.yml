@@ -1,4 +1,4 @@
-## Provision Spark ##
+ mwhere## Provision Spark ##
 
 - name: Download Apache Spark {{ spark_version }} hadoop 2.7
   become: yes
@@ -19,7 +19,7 @@
   become: yes
   become_user: "{{ analytics_user }}"
   unarchive: src={{ analytics.soft_path }}/scala-{{ scala_version }}.tgz dest={{ analytics.soft_path }}/ copy=no owner={{ analytics_user }} group={{ analytics_group }} creates={{ analytics.soft_path }}/scala-{{ scala_version }}
-
+ujj
 - name: Remove Guava 14.0.1 from Spark jars folder
   become: yes
   become_user: "{{ analytics_user }}"
@@ -124,10 +124,11 @@
   become_user: "{{ analytics_user }}"
   shell: "export PATH=$PATH:/home/analytics/.rvm/bin && rvm install ruby-3.1.1"
 
-- name: Add ruby repository
-  become: yes
-  apt_repository:
-    repo: ppa:brightbox/ruby-ng
+## commented by Amit as repository manually added 
+# - name: Add ruby repositlory
+#   become: yes
+#   apt_repository:
+#     repo: ppa:brightbox/ruby-ng
 
 # kenneth changed to install ruby-dev 2.6 as per R.4.6.0 - there is no ruby2.2-dev in bionic
 - name: Install latest ruby-dev
