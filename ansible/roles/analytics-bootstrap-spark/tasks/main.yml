@@ -2,9 +2,9 @@
 
 - name: Adding ENV Vars to bashrc file of spark.
   become: yes
-  become_method: dzdo
+  become_method: runas
   become_user: "{{ analytics_user }}"
-  become_flags: "sudo su - {{ analytics_user }}"
+  become_password: "amit@1234"
   lineinfile:
     path: '{{ analytics_user_home }}/.bashrc'
     line: 'export {{item.var}}={{item.value}}'
