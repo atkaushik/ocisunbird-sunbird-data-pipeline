@@ -44,6 +44,7 @@
 
 - name: Adding ENV Vars to spark servers environment.
   become: yes
+  become_method: sudo
   lineinfile:
     path: '/etc/environment'
     line: '{{item.var}}={{item.value}}'
