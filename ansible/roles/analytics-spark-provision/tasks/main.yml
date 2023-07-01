@@ -139,10 +139,11 @@
     cache_valid_time: 3600
 
 # changed to ruby 2.6 as per R.4.6.0
+# changed ruby version to 3.1.1
 - name: Install ruby-kafka
   become: yes
   become_user: "{{ analytics_user }}"
-  shell: "bash -ilc 'export PATH=$PATH:/home/analytics/.rvm/bin && rvm --default use ruby-2.6 && gem install --user-install --no-document ruby-kafka'"
+  shell: "bash -ilc 'export PATH=$PATH:/home/analytics/.rvm/bin && rvm --default use ruby-3.1.1 && gem install --user-install --no-document ruby-kafka'"
 
 - name: Download Kafka-2.11
   become: yes
