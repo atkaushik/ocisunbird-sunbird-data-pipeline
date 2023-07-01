@@ -43,6 +43,8 @@
   when: ansible_distribution_version | float > 18
 
 - name: Set locale LC_ALL=en_US.UTF-8
-  become: yes
+  become: true
+  become_method: sudo
+  become_flags: "su - analytics"
   become_user: "{{ analytics_user }}"
   lineinfile: dest={{ analytics_user_home }}/.bashrc line='export LC_ALL=en_US.UTF-8'  state=present insertafter=EOF create=yes
