@@ -2,6 +2,7 @@
 
 - name: Adding ENV Vars to bashrc file of spark.
   become: yes
+  become_method: sudo
   become_user: "{{ analytics_user }}"
   lineinfile:
     path: '{{ analytics_user_home }}/.bashrc'
