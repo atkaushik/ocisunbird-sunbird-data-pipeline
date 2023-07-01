@@ -163,11 +163,11 @@
   become: yes
   apt_repository:
     repo: ppa:deadsnakes/ppa
-
-- name: Install python 3.6
+#changed version to 3.9 from 3.6
+- name: Install python 3.9
   become: yes
   apt:
-    name: python3.6
+    name: python3.9
     state: present
     update_cache: true
     cache_valid_time: 3600
